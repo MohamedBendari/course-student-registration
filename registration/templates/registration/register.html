@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Student</title>
+</head>
+<body>
+    <h1>Student Registration Form</h1>
+
+    {% if success %}
+        <p style="color: green;">Student "{{ student.name }}" has been registered successfully!</p>
+    {% endif %}
+
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>
